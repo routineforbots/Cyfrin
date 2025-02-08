@@ -3,7 +3,7 @@ pragma solidity ^0.8.18; //stating a version
 
 //range can be defined like that: pragma solidity >=0.8.18 <0.9.0
 
-//contracts are like Class type of objects:
+//contracts are like Class type of objects in other programming languages:
 contract SimpleStorage {
     // basic types: 
     // boolean 
