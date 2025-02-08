@@ -6,13 +6,73 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_favouriteNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "addPeople",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "listOfPeople",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "favouriteNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
-				"name": "favouriteNumber",
+				"name": "myFavouriteNumber",
 				"outputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pat",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "favouriteNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -86,11 +146,11 @@
 	},
 	"sources": {
 		"SimpleStorage.sol": {
-			"keccak256": "0x2ddbd7a70707f8b3f0a5f05bb09f595fab1b15a71ff01b09e52843cb32e7a5fc",
+			"keccak256": "0x94fafb980ed3b43555606b0b96d0afb28edfe48dae0c80151ba3f8450157a67b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://76fcb69f524596e7283dea5bf559f6177eecf65312cf19bc8bb0d01139188a35",
-				"dweb:/ipfs/QmZPfWgF4TML6SfzG4khvD18JQNpr4cHuJMjN8V3asymUf"
+				"bzz-raw://bd72646db9a70d59a5235715fa6b1344a3cff4d24bddc06b05ea2a6d0d9bc33c",
+				"dweb:/ipfs/QmVGoRc7mbSW1xHJmCtL9drMsy3Rp7d1GgpujBrbPpmdGc"
 			]
 		}
 	},
