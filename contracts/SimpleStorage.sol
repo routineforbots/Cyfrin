@@ -78,7 +78,7 @@ contract SimpleStorage {
 
         //But better way to define it is the following:
         listOfPeople.push(Person(_favouriteNumber, _name));
-        nameToFavoriteNumber[_name] = _favouriteNumber; //performing mapping of value
+        nameToFavoriteNumber[_name] = _favouriteNumber; //performing mapping of value (also know as hash table)
     }
     //Keyword memory means a location of the data which EVM can:
     //Write & Read from: Stack, Memory, Storage, Calldata, Transient Storage, Code, Returndata
