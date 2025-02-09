@@ -52,6 +52,10 @@ contract SimpleStorage {
     //  0.  1.  2.  - indexes
     // [77, 78, 90]
 
+    //mapping works like a "key-value" dictionary
+    mapping(string => uint256) public nameToFavoriteNumber; //key is a string => which points to uint256
+
+
     //With the struct keyword you can create your own type
     struct Person{
         uint256 favouriteNumber;
@@ -74,6 +78,7 @@ contract SimpleStorage {
 
         //But better way to define it is the following:
         listOfPeople.push(Person(_favouriteNumber, _name));
+        nameToFavoriteNumber[_name] = _favouriteNumber; //performing mapping of value
     }
     //Keyword memory means a location of the data which EVM can:
     //Write & Read from: Stack, Memory, Storage, Calldata, Transient Storage, Code, Returndata
@@ -90,7 +95,6 @@ contract SimpleStorage {
     //storage - permanent variable that can be modified
     //any variable declared outside of a function is defined as storage one
 
-
-
+    
 }
 
