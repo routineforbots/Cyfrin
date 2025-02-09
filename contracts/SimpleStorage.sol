@@ -5,13 +5,15 @@ pragma solidity ^0.8.24; //stating a version
 
 //contracts are like Class type of objects in other programming languages:
 contract SimpleStorage {
-    // basic types: 
-    // boolean 
-    // uint - unsigned integer, positive whole number (no decimal), 
-    // int - signed integer, positive/negative whole number 
-    // string
-    // address
-    // bytes
+    /*
+     basic types: 
+    boolean 
+    uint - unsigned integer, positive whole number (no decimal), 
+    int - signed integer, positive/negative whole number 
+    string
+    address
+    bytes
+    */
 
     bool hasFavouriteNumber = true;
     uint favouriteNumber1 = 88; 
@@ -24,11 +26,13 @@ contract SimpleStorage {
     //bytes and bytesNUMBER (with number specified) are actually different object
 
     uint256 public myFavouriteNumber; //has default value = 0; any type of object has default value: boolean is false, etc...
-    //visibility of the variable is set to internal by default which can be changed with public keyword
-    //internal - only visible internally, for child contracts and inherited contracts
-    //public - visible externaly & internally, creates getter function for storage/state variables
-    //private - only visible in the current contract
-    //external - for functions only, can only be message-called via this.func
+    /*
+    visibility of the variable is set to internal by default which can be changed with public keyword
+    internal - only visible internally, for child contracts and inherited contracts
+    public - visible externaly & internally, creates getter function for storage/state variables
+    private - only visible in the current contract
+    external - for functions only, can only be message-called via this.func
+    */
 
     
     //The following function will update our favouriteNumber; parameters which we will pass to the functions are defined inside ()
@@ -36,9 +40,12 @@ contract SimpleStorage {
         myFavouriteNumber = _favoriteNumber;
     } 
 
-    //Every time when we update state of the blockchain - it costs gas. 
-    //To not send transaction but just a call (not use gas) we can use view & pure
-    //Keyword view - function will only read state from the blockchain
+    /*
+    Every time when we update state of the blockchain - it costs gas. 
+    To not send transaction but just a call (not use gas) we can use view & pure
+    Keyword view - function will only read state from the blockchain
+    */
+
     function retrieve() public view returns(uint256){
         return myFavouriteNumber;
     }
@@ -67,34 +74,39 @@ contract SimpleStorage {
 
     //let's create a list/array of persons, Person[] - declaration of type of variable
     Person[] public listOfPeople; // default value of this list will be empty list 
-    //Person[] - is a dynamic array which grows and shrinks based on amount of elements
-    //Person[3] - static array with size for 3 elements
+    
+    /*
+    Array types:
+    Person[] - is a dynamic array which grows and shrinks based on amount of elements
+    Person[3] - static array with size for 3 elements
+    */
 
     //Function to add people to the array 
     function addPeople(string memory _name, uint256 _favouriteNumber) public {
-        //one of the examples how to add a new element of the array:
-        //Person memory newPerson = Person(_favouriteNumber, _name);
-        //listOfPeople.push(newPerson);
+        /*
+        one of the examples how to add a new element of the array:
+        Person memory newPerson = Person(_favouriteNumber, _name);
+        listOfPeople.push(newPerson);
+        */
 
         //But better way to define it is the following:
         listOfPeople.push(Person(_favouriteNumber, _name));
         nameToFavoriteNumber[_name] = _favouriteNumber; //performing mapping of value (also know as hash table)
     }
-    //Keyword memory means a location of the data which EVM can:
-    //Write & Read from: Stack, Memory, Storage, Calldata, Transient Storage, Code, Returndata
-    //Write only to: Logs
-    //Read only from: Chain Data, Transaction data (&Blobhash), Gas data, Program Counter, etc
+    /* Keyword memory means a location of the data which EVM can:
+    1. Write & Read from: Stack, Memory, Storage, Calldata, Transient Storage, Code, Returndata
+    2. Write only to: Logs
+    3. Read only from: Chain Data, Transaction data (&Blobhash), Gas data, Program Counter, etc
 
-    //calldata & memory - are temporarly variables
-    //differences: memory variable can be changes but calldata is not
-    //all functions variables are temporary ones
-    //calldata & memory means that this variable is going to exist and be available temporarly (=duration of function call)
-    //inside of functions most variables are defined as memory ones, 
-    //structs, maps & strings are special types - array of bytes - so they must be defined explicitly (because of memory management specifics)
+    Calldata & memory - are temporarly variables. Differences: memory variable can be changes but calldata is not
+    All functions variables are temporary ones
+    Calldata & memory means that this variable is going to exist and be available temporarly (=duration of function call)
+    Inside of functions most variables are defined as memory ones, 
+    Structs, maps & strings are special types - array of bytes - so they must be defined explicitly (because of memory management specifics)
     
-    //storage - permanent variable that can be modified
-    //any variable declared outside of a function is defined as storage one
-
+    Storage - permanent variable that can be modified
+    Any variable declared outside of a function is defined as storage one
+    */
     
 }
 
