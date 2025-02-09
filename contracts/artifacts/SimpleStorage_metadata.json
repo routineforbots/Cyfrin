@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.22+commit.4fc1097e"
+		"version": "0.8.24+commit.e11b9ed9"
 	},
 	"language": "Solidity",
 	"output": {
@@ -150,7 +150,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"SimpleStorage.sol": "SimpleStorage"
+			"contracts/SimpleStorage.sol": "SimpleStorage"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -164,12 +164,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"SimpleStorage.sol": {
-			"keccak256": "0x88677a2667e5020feedfd3785a0a853aefa106e26d723ce342e29165f9ce6099",
+		"contracts/SimpleStorage.sol": {
+			"keccak256": "0x779840c3ca4bc802ef53eb6a4ae55e6ebcb1214f34fe8225f6b54549d3c08912",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://39d768aacbd7dd6e7f6ff2ae84f29f3836037ca81eeff415b804a037215e990a",
-				"dweb:/ipfs/QmZKcwG9LiTtgX5hDjSd59BDMT1d5JuakE7GkzziG9Jwgv"
+				"bzz-raw://cb8af385aa4279d36dd376a3b3a67851b3ec0fa00aec6723c1a3d6da70fa2a0e",
+				"dweb:/ipfs/QmT43CYhqkQfJoCNDdfK5t8jYErKxDF4nmNVmUx8JpJxin"
 			]
 		}
 	},
