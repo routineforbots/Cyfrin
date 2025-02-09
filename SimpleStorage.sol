@@ -67,7 +67,6 @@ contract SimpleStorage {
     //Person[3] - static array with size for 3 elements
 
     //Function to add people to the array 
-    //memory keyword means a location of the data
     function addPeople(string memory _name, uint256 _favouriteNumber) public {
         //one of the examples how to add a new element of the array:
         //Person memory newPerson = Person(_favouriteNumber, _name);
@@ -76,6 +75,22 @@ contract SimpleStorage {
         //But better way to define it is the following:
         listOfPeople.push(Person(_favouriteNumber, _name));
     }
+    //Keyword memory means a location of the data which EVM can:
+    //Write & Read from: Stack, Memory, Storage, Calldata, Transient Storage, Code, Returndata
+    //Write only to: Logs
+    //Read only from: Chain Data, Transaction data (&Blobhash), Gas data, Program Counter, etc
+
+    //calldata & memory - are temporarly variables
+    //differences: memory variable can be changes but calldata is not
+    //all functions variables are temporary ones
+    //calldata & memory means that this variable is going to exist and be available temporarly (=duration of function call)
+    //inside of functions most variables are defined as memory ones, 
+    //structs, maps & strings are special types - array of bytes - so they must be defined explicitly (because of memory management specifics)
+    
+    //storage - permanent variable that can be modified
+    //any variable declared outside of a function is defined as storage one
+
+
 
 }
 
