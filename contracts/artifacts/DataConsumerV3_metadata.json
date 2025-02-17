@@ -7,42 +7,33 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "fund",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "minUSD",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "myValue",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "withdraw",
-				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "getChainlinkDataFeedLatestAnswer",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDecimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -53,13 +44,21 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"constructor": {
+					"notice": "Network: Sepolia Aggregator: BTC/USD Address: 0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43"
+				},
+				"getChainlinkDataFeedLatestAnswer()": {
+					"notice": "Returns the latest answer."
+				}
+			},
+			"notice": "If you are reading data feeds on L2 networks, you must check the latest answer from the L2 Sequencer Uptime Feed to ensure that the data is accurate in the event of an L2 sequencer outage. See the https://docs.chain.link/data-feeds/l2-sequencer-feeds page for details.",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/FundMe.sol": "FundMe"
+			"contracts/DataConsumerV3.sol": "DataConsumerV3"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -87,14 +86,6 @@
 			"urls": [
 				"bzz-raw://137e0cbdf29a089458c409910b936548f05278c4530b4933e8a40218f6ce21d3",
 				"dweb:/ipfs/QmZxScp7U9RB6BcrjJt8u6uxtUBeJdzKRPP8FEs7gxvNfw"
-			]
-		},
-		"contracts/FundMe.sol": {
-			"keccak256": "0x2b231579f6fa69bad3c191a8b55ff5410b2592bfca717820e022b1831e17cf28",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://776ac9ac42f7b61afae6dce5f0c0592917bfc5dd373fd5fcfa1e6edddc6dfbfb",
-				"dweb:/ipfs/QmQDsthL1uo91LZnVQyVLZXNrwr7SD39NwXQmEvCx4hmce"
 			]
 		}
 	},
