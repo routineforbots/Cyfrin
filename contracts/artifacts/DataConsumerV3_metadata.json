@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.24+commit.e11b9ed9"
+		"version": "0.8.26+commit.8a97fa7a"
 	},
 	"language": "Solidity",
 	"output": {
@@ -52,7 +52,6 @@
 					"notice": "Returns the latest answer."
 				}
 			},
-			"notice": "If you are reading data feeds on L2 networks, you must check the latest answer from the L2 Sequencer Uptime Feed to ensure that the data is accurate in the event of an L2 sequencer outage. See the https://docs.chain.link/data-feeds/l2-sequencer-feeds page for details.",
 			"version": 1
 		}
 	},
@@ -60,7 +59,7 @@
 		"compilationTarget": {
 			"contracts/DataConsumerV3.sol": "DataConsumerV3"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -81,11 +80,11 @@
 			]
 		},
 		"contracts/DataConsumerV3.sol": {
-			"keccak256": "0x57afbd2ffdf29cc79ba32cb165cafd4358293ad9862026f7986975ce7260585b",
+			"keccak256": "0xd1d6d4aef70aedd599cdac0eb4b9464a5d2c3335a83f0b0f6a3bd56a7b6cd30d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://137e0cbdf29a089458c409910b936548f05278c4530b4933e8a40218f6ce21d3",
-				"dweb:/ipfs/QmZxScp7U9RB6BcrjJt8u6uxtUBeJdzKRPP8FEs7gxvNfw"
+				"bzz-raw://f3c6146da87e4b84146f085a37c81632e436c501818752ba399fdb1b8f9e65a7",
+				"dweb:/ipfs/QmbCoGeHpcPjmPeUG5nCKT5qgycBjdfaX1YpoztuMtBe4v"
 			]
 		}
 	},

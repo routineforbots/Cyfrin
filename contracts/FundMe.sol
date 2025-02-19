@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import {DataConsumerV3} from "./DataConsumerV3.sol";
+import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol"; 
 
 contract FundMe {
 
@@ -33,6 +33,18 @@ function fund() public payable {
 
 }
 
+// we want to get current price of ETH in USD
+function getPrice() public view returns (uint256) {
+    AggregatorV3Interface pricefeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
+   (, int answer, , ,) = pricefeed.latestRoundData(); // we will return only one variable out of 5
+    return uint256(answer * 1e10); // we need to convert it to uint256 to match msg.value for the follow-up steps
+}
+
+
+// we want to get the convertion rate
+function getConvertion() public view {
+
+}
 
 
 // withdraw funds back to the owner of the conract
