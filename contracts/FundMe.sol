@@ -7,7 +7,11 @@ contract FundMe {
 
     uint256 public myValue = 10; // variable to showcase how transaction is reverted
 
-    uint256 public minUSD = 5;
+    uint256 public minUSD = 5 * (10 ** 18); // we need to adjust the amount of digits with 1e18 format of Solidity's whole numbers 1e18
+
+    address[] public funders;
+    mapping(address funder => uint256 amountFunded ) public addressToAmountFunded;
+
 
 
 // get fund from users into this contract - add keyword payable
@@ -29,7 +33,10 @@ function fund() public payable {
     */
 
     // we will need to convert current price of Ethereum in USD with Chainlink Oracle
-    require(msg.value >= minUSD, "didn't send enough ETH");
+    require(getConvertionRate(msg.value) >= minUSD, "didn't send enough ETH");
+    funders.push(msg.sender);
+    addressToAmountFunded[msg.sender] = addressToAmountFunded[msg.sender] + msg.value; // tracking of any amount funded before + new amount
+
 
 }
 
@@ -41,8 +48,15 @@ function getPrice() public view returns (uint256) {
 }
 
 
-// we want to get the convertion rate
-function getConvertion() public view {
+// we want to get the convertion rate to answer on questions like how much 1ETH is worth 
+function getConvertionRate(uint256 _ethAmount) public view returns(uint256) {
+    uint256 ethPrice = getPrice();
+
+    // rule #1 in solidity - always multiply before division, because we work with whole numbers in Solidity
+    uint256 ethAmountInUsd = (_ethAmount * ethPrice) / 1e18; 
+    // example: (2000_000000000000000000 * 1_000000000000000000) / 1000000000000000000 = 2000 USD
+
+    return ethAmountInUsd; // return the current price of ETH in USD
 
 }
 
@@ -52,7 +66,6 @@ function withdraw() public {
 
 }
 
-// set a minimum funding value in USD
 
 
 
