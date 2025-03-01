@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.26+commit.8a97fa7a"
+		"version": "0.8.24+commit.e11b9ed9"
 	},
 	"language": "Solidity",
 	"output": {
@@ -59,7 +59,7 @@
 		"compilationTarget": {
 			"contracts/DataConsumerV3.sol": "DataConsumerV3"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -80,11 +80,11 @@
 			]
 		},
 		"contracts/DataConsumerV3.sol": {
-			"keccak256": "0xd1d6d4aef70aedd599cdac0eb4b9464a5d2c3335a83f0b0f6a3bd56a7b6cd30d",
+			"keccak256": "0xe6a56641ea0cd30940836a9e6f29606685a662795a6e1cc6f5133dd146064366",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f3c6146da87e4b84146f085a37c81632e436c501818752ba399fdb1b8f9e65a7",
-				"dweb:/ipfs/QmbCoGeHpcPjmPeUG5nCKT5qgycBjdfaX1YpoztuMtBe4v"
+				"bzz-raw://eb86023bb96b433a5ba689ace6d5a763d05cce4c93ab19a89b75efc89a9b9237",
+				"dweb:/ipfs/QmQXSnngktLUa2SreA52pkstAZ2tnVXqTmH9AAVm1uqXTR"
 			]
 		}
 	},

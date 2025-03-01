@@ -27,7 +27,7 @@ interface AggregatorV3Interface {
 
 so now we call functions from the interface:
 
-function getVersion) public view returns (uint256){
+function getVersion() public view returns (uint256){
     return AggregatorV3Interface(0x694A1769357215DE4FAC081bf1f309aDC325306).version();
     // contract 0x694A1769357215DE4FAC081bf1f309aDC325306 is being used to create an instace of the AggregatorV3Interface contract
     // which defines set of functions that must be implemented by another contract
