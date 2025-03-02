@@ -21,6 +21,9 @@ library PriceConverter {
     }
 
     function getVersion() internal view returns (uint256) {
-        return AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306).version();
+        // return AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306).version();
+        
+        // different address is used for ZKSync
+        return AggregatorV3Interface(0xfEefF7c3fB57d18C5C6Cdd71e45D2D0b4F9377bF).version();
     }
 }
