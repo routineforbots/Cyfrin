@@ -11,6 +11,41 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [],
+				"name": "NotOwner",
+				"type": "error"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "MINIMUM_USD",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MY_VALUE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -57,33 +92,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "minUSD",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "myValue",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "owner",
+				"name": "i_owner",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -100,6 +109,10 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -115,7 +128,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/FundMe02.sol": "FundMe"
+			"contracts/FundMe03.sol": "FundMe"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -137,12 +150,12 @@
 				"dweb:/ipfs/QmaG6vz6W6iEUBsbHSBob5mdcitYxWjoygxREHpsJHfWrS"
 			]
 		},
-		"contracts/FundMe02.sol": {
-			"keccak256": "0xedc72720039238e20efb57a76494a1cfa4bcfdef44dc2a3d180da96766dfaeec",
+		"contracts/FundMe03.sol": {
+			"keccak256": "0x556864b00a2f55e11a473d7757769c16e58af644e7e7c48d4f85bb1954964460",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c3819b709965322a3f44714163113ec27aeb8cc768246308e7d7e5aaaaeaa42e",
-				"dweb:/ipfs/QmSh5jM2TBfYSGdx85QWjXcAuWRJihcQ4CEVyTfccMD1Q6"
+				"bzz-raw://ec059935b904dbd9bc46c6f56e66e10a812074c73e84303901f2d102e6110f1c",
+				"dweb:/ipfs/QmbzLXBQpNmekT9fmmVLZKEjKDThc1Laeve4SY6pcVNwAY"
 			]
 		},
 		"contracts/PriceConverter.sol": {
