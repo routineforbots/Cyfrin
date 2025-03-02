@@ -8,6 +8,7 @@ error NotOwner();
 
 
 // we will also  adjust valiables for gas optimization with keywords:
+//The immutable keyword allows values to be set at runtime, while the constant keyword requires values to be set at compile time.
 // const - initialized once and can be reassigned within a scope, should be ALL_CAPITAL letters
 // immutable - initialized once remain unchanged, should start with i_*
 
