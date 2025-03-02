@@ -120,11 +120,11 @@
 			]
 		},
 		"contracts/FundMe02.sol": {
-			"keccak256": "0x28b1ef99b7db4b9da3238fd9abb8220398227a3926b5815634dbc1c2bd32a5b9",
+			"keccak256": "0xe51c19b2838f28dea890261d68c8c0e390bbb383b43750875fdf6866cbc5f631",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0d6ae6a9ecdd1bc78354d82163320d429ec8644df76dd982dedc94d8a50f3206",
-				"dweb:/ipfs/QmUxabtXmVwJxVqY52iBV74irZX9CGrha5i4W4ZnrqX2ju"
+				"bzz-raw://c3ab9296a32d6d3b2821b3a1ff4c5e2e4db59d00eb80c8a244edc9aa2116b63f",
+				"dweb:/ipfs/QmSH3SEvhrDszBMwbiSXBzssTiiyPGRcpCN4kQPHpFmNGQ"
 			]
 		},
 		"contracts/PriceConverter.sol": {

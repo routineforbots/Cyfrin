@@ -40,11 +40,33 @@ function withdraw() public {
     }
 
     // we will reset the array by creating new one
-    funders = new address[](0); // (0) - means starting length equals zero
+    funders = new address[](0); // (0) - means starting length of array equals zero
 
 
-    // withdraw the funds
+    /* 
+    There are 3 ways to send funds in ETH:
+    1. transfer
+    2. send
+    3. call
     
+
+    // 1. transfer - it is capped at 2300 gas and if more gas is used it throws an error
+    payable(msg.sender).transfer(address(this).balance); 
+
+    Keyword this reffers to this whole contract
+    We also need to cast msg.sender from address type to payable address type
+    Transfer will automatically revert the transaction in case of an error.
+    
+
+    // 2. send - also capped at 2300 gas and if it fails it returns bool
+    bool sendSuccess = payable(msg.sender).send(address(this).balance);
+    require(sendSuccess, "Failed to send"); // this is the way we rever the transaction since send doesn't do this
+
+    */
+
+    // 3. call - low level command to call any function without knowing ABI, doesn't have capped gas and returns bool
+    (bool callSuccess, /* bytes memory dataReturned */) = payable(msg.sender).call{value: address(this).balance}(""); // this function returns 2 variables but we only need a first one
+    require(callSuccess, "Call failed"); // again we rever the transaction since call doesn't do this
 
 
 }
