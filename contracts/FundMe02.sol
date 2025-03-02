@@ -13,6 +13,14 @@ contract FundMe {
     address[] public funders;
     mapping(address funder => uint256 amountFunded ) public addressToAmountFunded;
 
+    address public owner;
+
+// cunstructor is this function is a function which is called at the time of deployment of the contract
+// we will use it to assign creator of the contract as its owner
+constructor() {
+    owner = msg.sender;
+
+}
 
 
 function fund() public payable {
@@ -27,8 +35,10 @@ function fund() public payable {
 }
 
 
-// withdraw funds back to the owner of the conract
-function withdraw() public {
+// withdraw funds back to the owner of the conract; onlyOwner here is the modifier used to add functionality
+function withdraw() public onlyOwner {
+    // modifier will be called first - so it will check if owner == caller of the function
+
     /*
     for loop
     [1, 2, 3, 4] - elements
@@ -71,7 +81,13 @@ function withdraw() public {
 
 }
 
-
+// modifier allows us to create a keyword which we can put in the function declaration to add some functionality
+// can be used for repeated functionality
+modifier onlyOwner() {
+    // _; - place defines the order: if we put it here then function will be called first and the the modifier bellow:
+    require(msg.sender == owner, "Not authorized, only owner can call it");
+    _; // code of the function will be called after modifier if this _; is placed at the end
+}
 
 
 }
